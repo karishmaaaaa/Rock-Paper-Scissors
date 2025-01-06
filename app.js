@@ -1,6 +1,6 @@
 var paperButton = document.getElementById("paper");
 var rockButton = document.getElementById("rock");
-var scissorsButton = document.getElementById("scissors");
+var scissorsButton = document.getElementById("scissor");
 
 var playerChoiceDisplay = document.getElementById("image-area");
 var computerChoiceDisplay = document.getElementById("image-area-one");
@@ -33,7 +33,7 @@ scissorsButton.addEventListener("click", function () {
 
 function handlePlayerChoice(choice) {
   playerChoice = choice;
-  playerChoiceDisplay.innerHTML = `<p>${choice.charAt(0).toUpperCase() + choice.slice(1)}</p>`;
+  playerChoiceDisplay.innerHTML = `<p class="insert-img">${choice.charAt(0).toUpperCase() + choice.slice(1)}</p>`;
   generateComputerChoice();
   calculateScores();
   updateUI();
@@ -67,9 +67,9 @@ function checkGameWinner() {
     scissorsButton.disabled = true;
 
     if (playerScore > computerScore) {
-      resultMessage.textContent = "Player (You) Won!!!";
+      resultMessage.textContent = "Player (You) Won!";
     } else {
-      resultMessage.textContent = "Computer Won!!!";
+      resultMessage.textContent = "Computer Won!";
     }
 
     showReplayButton();
